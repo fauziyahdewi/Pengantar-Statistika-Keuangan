@@ -1,0 +1,24 @@
+Presentvalue <- function(num,A,t,i,m=TRUE)
+  #num = pilihan
+  #satu = bunga tunggal
+  #dua = majemuk nominal
+  #tiga = majemuk kontinu
+  #pv = present value
+  #A = nilai akumulasi
+  #t = tahun
+  #i = persen bunga
+  #m = jangka waktu
+  switch(num, 
+         satu = {
+           pv = A/(1+i*t)
+           print(pv)
+         },
+         dua = {
+           pv = A*(1+i/m)^(-m*t)
+           print(pv)
+         },
+         tiga = {
+           pv = A*exp(-i*t)
+           print(pv)
+         }
+  )
